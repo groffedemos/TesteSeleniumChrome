@@ -22,6 +22,10 @@ namespace TesteSelenium
             chromeOptions.SetLoggingPreference(LogType.Profiler, LogLevel.Off);
             chromeOptions.SetLoggingPreference(LogType.Server, LogLevel.Off);
 
+            chromeOptions.AddUserProfilePreference("webdriver.log.browser.ignore", true);
+            chromeOptions.AddUserProfilePreference("webdriver.log.driver.ignore", true);
+            chromeOptions.AddUserProfilePreference("webdriver.log.profiler.ignore", true);
+            
             ChromeDriver driver;
 
             if (Environment.OSVersion.VersionString.ToLower().Contains("windows"))
