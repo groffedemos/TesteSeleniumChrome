@@ -14,14 +14,15 @@ namespace TesteSelenium
 
             var chromeOptions = new ChromeOptions();
             chromeOptions.AddArgument("--headless");
-            chromeOptions.UnhandledPromptBehavior = UnhandledPromptBehavior.Dismiss;
+            chromeOptions.AddArgument("--log-level=3");
+            //chromeOptions.UnhandledPromptBehavior = UnhandledPromptBehavior.Dismiss;
 
             chromeOptions.SetLoggingPreference(LogType.Browser, LogLevel.Off);
             chromeOptions.SetLoggingPreference(LogType.Driver, LogLevel.Off);
 
-            chromeOptions.AddUserProfilePreference("webdriver.log.client.ignore", true);
+            /*chromeOptions.AddUserProfilePreference("webdriver.log.client.ignore", true);
             chromeOptions.AddUserProfilePreference("webdriver.log.server.ignore", true);
-            chromeOptions.AddUserProfilePreference("webdriver.log.profiler.ignore", true);
+            chromeOptions.AddUserProfilePreference("webdriver.log.profiler.ignore", true);*/
             
             ChromeDriver driver;
 
@@ -33,7 +34,7 @@ namespace TesteSelenium
 
             driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(30);
             //driver.Manage().Timeouts().AsynchronousJavaScript = TimeSpan.FromSeconds(30);
-            //driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(60);
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(60);
 
             var siteTestes = Environment.GetEnvironmentVariable("SiteTestes");
             //driver.Navigate().GoToUrl("https://anp-imagemnasa.azurewebsites.net/");
