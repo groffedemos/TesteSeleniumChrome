@@ -14,9 +14,12 @@ namespace TesteSelenium
 
             var chromeOptions = new ChromeOptions();
             chromeOptions.AddArgument("--headless");
-            chromeOptions.AddArgument("--log-level=3");
-            chromeOptions.AddArgument("--disable-logging");
+            //chromeOptions.AddArgument("--log-level=3");
+            //chromeOptions.AddArgument("--disable-logging");
             //chromeOptions.UnhandledPromptBehavior = UnhandledPromptBehavior.Dismiss;
+
+            var service = ChromeDriverService.CreateDefaultService();
+            service.SuppressInitialDiagnosticInformation = true;
 
             chromeOptions.SetLoggingPreference(LogType.Browser, LogLevel.Off);
             chromeOptions.SetLoggingPreference(LogType.Driver, LogLevel.Off);
@@ -30,7 +33,7 @@ namespace TesteSelenium
             if (Environment.OSVersion.VersionString.ToLower().Contains("windows"))
                 driver = new ChromeDriver("D:\\Selenium\\Chrome\\", chromeOptions);
             else
-                driver = new ChromeDriver(chromeOptions);
+                driver = new ChromeDriver(service, chromeOptions);
 
 
             driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(30);
