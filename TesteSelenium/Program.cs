@@ -18,6 +18,7 @@ namespace TesteSelenium
             chromeOptions.AddArgument("--output=/dev/null");
             chromeOptions.AddArgument("--disable-in-process-stack-traces");
             chromeOptions.AddArgument("--disable-logging");
+            chromeOptions.AddArgument("--disable-crash-reporter");
             //chromeOptions.UnhandledPromptBehavior = UnhandledPromptBehavior.Dismiss;
 
             var service = ChromeDriverService.CreateDefaultService();
@@ -27,9 +28,9 @@ namespace TesteSelenium
             chromeOptions.SetLoggingPreference(LogType.Browser, LogLevel.Off);
             chromeOptions.SetLoggingPreference(LogType.Driver, LogLevel.Off);
 
-            /*chromeOptions.AddUserProfilePreference("webdriver.log.client.ignore", true);
+            chromeOptions.AddUserProfilePreference("webdriver.log.client.ignore", true);
             chromeOptions.AddUserProfilePreference("webdriver.log.server.ignore", true);
-            chromeOptions.AddUserProfilePreference("webdriver.log.profiler.ignore", true);*/
+            chromeOptions.AddUserProfilePreference("webdriver.log.profiler.ignore", true);
             
             ChromeDriver driver;
 
