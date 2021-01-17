@@ -24,7 +24,7 @@ namespace TesteSelenium
             if (Environment.OSVersion.VersionString.ToLower().Contains("windows"))
                 driver = new ChromeDriver("D:\\Selenium\\Chrome\\", chromeOptions);
             else
-                driver = new ChromeDriver(service, chromeOptions);
+                driver = new ChromeDriver(chromeOptions);
 
 
             driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(30);
