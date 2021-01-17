@@ -36,7 +36,7 @@ namespace TesteSelenium
             //driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(60);
 
             //var siteTestes = Environment.GetEnvironmentVariable("SiteTestes");
-            //driver.Navigate().GoToUrl("https://anp-imagemnasa.azurewebsites.net/");
+            driver.Navigate().GoToUrl("https://anp-imagemnasa.azurewebsites.net/");
             //driver.Navigate().GoToUrl("https://github.com");
 
             //System.Threading.Thread.Sleep(3000);
