@@ -17,7 +17,7 @@ namespace TesteSelenium
 
             var service = ChromeDriverService.CreateDefaultService();
             service.SuppressInitialDiagnosticInformation = true;
-            service.Port = 1234;
+            service.EnableVerboseLogging = false;
 
             chromeOptions.SetLoggingPreference(LogType.Browser, LogLevel.Off);
             chromeOptions.SetLoggingPreference(LogType.Driver, LogLevel.Off);
