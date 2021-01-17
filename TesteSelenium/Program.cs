@@ -14,6 +14,7 @@ namespace TesteSelenium
 
             var chromeOptions = new ChromeOptions();
             chromeOptions.AddArgument("--headless");
+            chromeOptions.AddArgument("--log-level=3");
             //chromeOptions.UnhandledPromptBehavior = UnhandledPromptBehavior.Dismiss;
 
             ChromeDriver driver;
