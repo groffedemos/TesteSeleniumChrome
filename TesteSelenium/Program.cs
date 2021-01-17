@@ -17,7 +17,7 @@ namespace TesteSelenium
             chromeOptions.AddArgument("--log-level=3");
             chromeOptions.AddArgument("--output=/dev/null");
             chromeOptions.AddArgument("--disable-in-process-stack-traces");
-            //chromeOptions.AddArgument("--disable-logging");
+            chromeOptions.AddArgument("--disable-logging");
             //chromeOptions.UnhandledPromptBehavior = UnhandledPromptBehavior.Dismiss;
 
             var service = ChromeDriverService.CreateDefaultService();
@@ -39,7 +39,7 @@ namespace TesteSelenium
                 driver = new ChromeDriver(service, chromeOptions);
 
 
-            System.Threading.Thread.Sleep(3000);
+            //System.Threading.Thread.Sleep(3000);
             driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(30);
             //driver.Manage().Timeouts().AsynchronousJavaScript = TimeSpan.FromSeconds(30);
             //driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(60);
