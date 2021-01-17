@@ -16,12 +16,16 @@ namespace TesteSelenium
             chromeOptions.AddArgument("--headless");
             //chromeOptions.UnhandledPromptBehavior = UnhandledPromptBehavior.Dismiss;
 
+            ChromeDriverService service = ChromeDriverService.CreateDefaultService();
+            service.SuppressInitialDiagnosticInformation = true;
+
             ChromeDriver driver;
 
             if (Environment.OSVersion.VersionString.ToLower().Contains("windows"))
                 driver = new ChromeDriver("D:\\Selenium\\Chrome\\", chromeOptions);
             else
-                driver = new ChromeDriver(chromeOptions);
+                driver = new ChromeDriver(service, chromeOptions);
+
 
             driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(30);
             //driver.Manage().Timeouts().AsynchronousJavaScript = TimeSpan.FromSeconds(30);
