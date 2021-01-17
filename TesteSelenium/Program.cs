@@ -38,7 +38,7 @@ namespace TesteSelenium
             //driver.Navigate().GoToUrl("https://anp-imagemnasa.azurewebsites.net/");
             driver.Navigate().GoToUrl("https://github.com");
 
-            System.Threading.Thread.Sleep(3000);
+            //System.Threading.Thread.Sleep(3000);
 
             Console.WriteLine($"Resultado: {driver.Title}");
 
