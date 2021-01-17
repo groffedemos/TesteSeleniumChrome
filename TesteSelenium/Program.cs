@@ -16,8 +16,11 @@ namespace TesteSelenium
             chromeOptions.AddArgument("--headless");
             chromeOptions.UnhandledPromptBehavior = UnhandledPromptBehavior.Dismiss;
 
-            ChromeDriverService service = ChromeDriverService.CreateDefaultService();
-            service.SuppressInitialDiagnosticInformation = true;
+            chromeOptions.SetLoggingPreference(LogType.Browser, LogLevel.Off);
+            chromeOptions.SetLoggingPreference(LogType.Client, LogLevel.Off);
+            chromeOptions.SetLoggingPreference(LogType.Driver, LogLevel.Off);
+            chromeOptions.SetLoggingPreference(LogType.Profiler, LogLevel.Off);
+            chromeOptions.SetLoggingPreference(LogType.Server, LogLevel.Off);
 
             ChromeDriver driver;
 
@@ -29,7 +32,7 @@ namespace TesteSelenium
 
             driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(30);
             //driver.Manage().Timeouts().AsynchronousJavaScript = TimeSpan.FromSeconds(30);
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(60);
+            //driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(60);
 
             var siteTestes = Environment.GetEnvironmentVariable("SiteTestes");
             driver.Navigate().GoToUrl("https://anp-imagemnasa.azurewebsites.net/");
