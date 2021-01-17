@@ -17,7 +17,7 @@ namespace TesteSelenium
 
             var service = ChromeDriverService.CreateDefaultService();
             service.SuppressInitialDiagnosticInformation = true;
-            //service.Port = 4444;
+            service.Port = 1234;
 
             chromeOptions.SetLoggingPreference(LogType.Browser, LogLevel.Off);
             chromeOptions.SetLoggingPreference(LogType.Driver, LogLevel.Off);
@@ -30,10 +30,11 @@ namespace TesteSelenium
                 driver = new ChromeDriver(service, chromeOptions);
 
 
-            //System.Threading.Thread.Sleep(3000);
             driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(60);
             //driver.Manage().Timeouts().AsynchronousJavaScript = TimeSpan.FromSeconds(30);
             //driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(60);
+            
+            System.Threading.Thread.Sleep(3000);
 
             //var siteTestes = Environment.GetEnvironmentVariable("SiteTestes");
             driver.Navigate().GoToUrl("https://anp-imagemnasa.azurewebsites.net/");
