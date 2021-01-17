@@ -14,7 +14,7 @@ namespace TesteSelenium
 
             var chromeOptions = new ChromeOptions();
             chromeOptions.AddArgument("--headless");
-            //chromeOptions.UnhandledPromptBehavior = UnhandledPromptBehavior.Dismiss;
+            chromeOptions.UnhandledPromptBehavior = UnhandledPromptBehavior.Dismiss;
 
             ChromeDriverService service = ChromeDriverService.CreateDefaultService();
             service.SuppressInitialDiagnosticInformation = true;
@@ -29,7 +29,7 @@ namespace TesteSelenium
 
             driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(30);
             //driver.Manage().Timeouts().AsynchronousJavaScript = TimeSpan.FromSeconds(30);
-            //driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(60);
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(60);
 
             var siteTestes = Environment.GetEnvironmentVariable("SiteTestes");
             driver.Navigate().GoToUrl("https://anp-imagemnasa.azurewebsites.net/");
