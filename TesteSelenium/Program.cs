@@ -14,13 +14,6 @@ namespace TesteSelenium
 
             var chromeOptions = new ChromeOptions();
             chromeOptions.AddArgument("--headless");
-            chromeOptions.AddArgument("--disable-extensions");
-            chromeOptions.AddArgument("--log-level=3");
-            chromeOptions.AddArgument("--output=/dev/null");
-            chromeOptions.AddArgument("--disable-in-process-stack-traces");
-            chromeOptions.AddArgument("--disable-logging");
-            chromeOptions.AddArgument("--disable-crash-reporter");
-            //chromeOptions.UnhandledPromptBehavior = UnhandledPromptBehavior.Dismiss;
 
             var service = ChromeDriverService.CreateDefaultService();
             service.SuppressInitialDiagnosticInformation = true;
@@ -28,10 +21,6 @@ namespace TesteSelenium
 
             chromeOptions.SetLoggingPreference(LogType.Browser, LogLevel.Off);
             chromeOptions.SetLoggingPreference(LogType.Driver, LogLevel.Off);
-
-            chromeOptions.AddUserProfilePreference("webdriver.log.client", 0);
-            chromeOptions.AddUserProfilePreference("webdriver.log.server", 0);
-            chromeOptions.AddUserProfilePreference("webdriver.log.profiler", 0);
             
             ChromeDriver driver;
 
@@ -42,7 +31,7 @@ namespace TesteSelenium
 
 
             //System.Threading.Thread.Sleep(3000);
-            driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(30);
+            driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(60);
             //driver.Manage().Timeouts().AsynchronousJavaScript = TimeSpan.FromSeconds(30);
             //driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(60);
 
