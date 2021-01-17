@@ -16,6 +16,7 @@ namespace TesteSelenium
             chromeOptions.AddArgument("--headless");
             chromeOptions.AddArgument("--log-level=3");
             chromeOptions.AddArgument("--output=/dev/null");
+            chromeOptions.AddArgument("--disable-in-process-stack-traces");
             //chromeOptions.AddArgument("--disable-logging");
             //chromeOptions.UnhandledPromptBehavior = UnhandledPromptBehavior.Dismiss;
 
