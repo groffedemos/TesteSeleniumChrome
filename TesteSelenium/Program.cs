@@ -14,16 +14,17 @@ namespace TesteSelenium
 
             var chromeOptions = new ChromeOptions();
             chromeOptions.AddArgument("--headless");
-            chromeOptions.AddArgument("--log-level=3");
+            chromeOptions.AddArgument("--disable-extensions");
+            /*chromeOptions.AddArgument("--log-level=3");
             chromeOptions.AddArgument("--output=/dev/null");
             chromeOptions.AddArgument("--disable-in-process-stack-traces");
             chromeOptions.AddArgument("--disable-logging");
-            chromeOptions.AddArgument("--disable-crash-reporter");
+            chromeOptions.AddArgument("--disable-crash-reporter");*/
             //chromeOptions.UnhandledPromptBehavior = UnhandledPromptBehavior.Dismiss;
 
             var service = ChromeDriverService.CreateDefaultService();
             service.SuppressInitialDiagnosticInformation = true;
-            service.Port = 4444;
+            //service.Port = 4444;
 
             chromeOptions.SetLoggingPreference(LogType.Browser, LogLevel.Off);
             chromeOptions.SetLoggingPreference(LogType.Driver, LogLevel.Off);
