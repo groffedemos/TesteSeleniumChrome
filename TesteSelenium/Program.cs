@@ -39,12 +39,13 @@ namespace TesteSelenium
                 driver = new ChromeDriver(service, chromeOptions);
 
 
+            System.Threading.Thread.Sleep(3000);
             driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(30);
             //driver.Manage().Timeouts().AsynchronousJavaScript = TimeSpan.FromSeconds(30);
             //driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(60);
 
-            var siteTestes = Environment.GetEnvironmentVariable("SiteTestes");
-            driver.Navigate().GoToUrl("https://anp-imagemnasa.azurewebsites.net/");
+            //var siteTestes = Environment.GetEnvironmentVariable("SiteTestes");
+            //driver.Navigate().GoToUrl("https://anp-imagemnasa.azurewebsites.net/");
             //driver.Navigate().GoToUrl("https://github.com");
 
             //System.Threading.Thread.Sleep(3000);
