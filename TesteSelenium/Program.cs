@@ -17,13 +17,10 @@ namespace TesteSelenium
             chromeOptions.UnhandledPromptBehavior = UnhandledPromptBehavior.Dismiss;
 
             chromeOptions.SetLoggingPreference(LogType.Browser, LogLevel.Off);
-            chromeOptions.SetLoggingPreference(LogType.Client, LogLevel.Off);
             chromeOptions.SetLoggingPreference(LogType.Driver, LogLevel.Off);
-            chromeOptions.SetLoggingPreference(LogType.Profiler, LogLevel.Off);
-            chromeOptions.SetLoggingPreference(LogType.Server, LogLevel.Off);
 
-            chromeOptions.AddUserProfilePreference("webdriver.log.browser.ignore", true);
-            chromeOptions.AddUserProfilePreference("webdriver.log.driver.ignore", true);
+            chromeOptions.AddUserProfilePreference("webdriver.log.client.ignore", true);
+            chromeOptions.AddUserProfilePreference("webdriver.log.server.ignore", true);
             chromeOptions.AddUserProfilePreference("webdriver.log.profiler.ignore", true);
             
             ChromeDriver driver;
