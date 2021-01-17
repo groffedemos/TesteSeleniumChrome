@@ -15,6 +15,7 @@ namespace TesteSelenium
             var chromeOptions = new ChromeOptions();
             chromeOptions.AddArgument("--headless");
             chromeOptions.AddArgument("--log-level=3");
+            chromeOptions.AddArgument("--disable-logging");
             //chromeOptions.UnhandledPromptBehavior = UnhandledPromptBehavior.Dismiss;
 
             chromeOptions.SetLoggingPreference(LogType.Browser, LogLevel.Off);
